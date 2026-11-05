@@ -19,6 +19,7 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#promos">Promos</a>
+        <a href="#carta">Carta</a>
         <a href="#menu">Menú</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
@@ -39,12 +40,22 @@
         <h1 class="hero__title">TORO DEL BAJO</h1>
         <p class="hero__subtitle">Hamburguesas &amp; Hot Dogs hechas con el corazón</p>
         <div class="hero__actions">
-          <a href="#menu" class="btn btn--primary">Ver el menú</a>
+          <a href="#carta" class="btn btn--primary">Ver la carta</a>
           <a href="#contacto" class="btn btn--ghost">Pedir ahora</a>
         </div>
+        <a href="#promos" class="scroll-down" aria-label="Bajar al contenido">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
       </div>
-      <div class="hero__image">
-        <img src="img/hamburguesa-especial.jpeg" alt="Hamburguesa especial con tocino y huevo">
+      <div class="hero__collage">
+        <img class="hero__collage-item" src="img/hamburguesa-sencilla.jpeg" alt="Hamburguesa con papas">
+        <img class="hero__collage-item" src="img/hamburguesa-especial.jpeg" alt="Hamburguesa con tocino y huevo">
+        <img class="hero__collage-item" src="img/hotdogs-capote.jpeg" alt="Hot dogs con jalapeños">
+        <img class="hero__collage-item hero__collage-item--logo" src="img/logo.jpeg" alt="Logo Toro del Bajo">
+        <img class="hero__collage-item" src="img/hotdog-pico.jpeg" alt="Hot dogs con pico de gallo">
+        <img class="hero__collage-item" src="img/hamburguesa-clasica.jpeg" alt="Hamburguesa clásica">
       </div>
     </section>
 
@@ -61,7 +72,7 @@
             <div class="promo-card__body">
               <h3>Hamburguesa Sencilla</h3>
               <p class="promo-card__price">$90.00 <span>MXN</span></p>
-              <p>Hamburguesa con pan de ajonjolí, carne, papas sazonadas y salsas de la casa.</p>
+              <p>Sirloin, jitomate, lechuga, queso amarillo con papas.</p>
             </div>
           </article>
           <article class="promo-card">
@@ -71,86 +82,175 @@
             <div class="promo-card__body">
               <h3>Hotdogs Capote</h3>
               <p class="promo-card__price">$80.00 <span>MXN</span></p>
-              <p>Hot dogs cubiertos con queso, jalapeños, pico de gallo y papas por encima.</p>
+              <p>Orden de 3 hot dogs: salchicha, verdura y con papas.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- MENU -->
-    <section class="menu" id="menu">
+    <!-- CARTA -->
+    <section class="carta" id="carta">
       <div class="container">
-        <h2 class="section-title">Nuestro menú</h2>
-        <p class="section-sub">Todo servido en su envase, listo para llevar</p>
-        <div class="menu__grid">
+        <h2 class="section-title section-title--dark">La carta</h2>
+        <p class="section-sub section-sub--dark">Precios y ingredientes — toca + para agregar a tu pedido</p>
 
-          <article class="card">
-            <div class="card__img"><img src="img/hamburguesa-sencilla.jpeg" alt="Hamburguesa Sencilla"></div>
-            <div class="card__body">
-              <span class="card__badge card__badge--hot">Top venta</span>
-              <h3>Hamburguesa Sencilla</h3>
-              <p>Pan de ajonjolí, lechuga, carne y papas sazonadas con salsas de la casa.</p>
-              <p class="card__price">$90.00 MXN</p>
-            </div>
+        <div class="carta__grid">
+
+          <article class="carta-panel">
+            <h3 class="carta-panel__title">Hamburguesas</h3>
+            <ul class="carta-list">
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Sencilla</strong>
+                  <span>Sirloin, jitomate, lechuga, queso amarillo con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$90</span>
+                  <div class="stepper stepper--zero" data-name="Hamburguesa Sencilla" data-price="90">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Hamburguesa Sencilla">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Hamburguesa Sencilla">+</button>
+                  </div>
+                </div>
+              </li>
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Hass-Burger</strong>
+                  <span>Sirloin, jitomate, lechuga, jamón, queso amarillo, guacamole con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$110</span>
+                  <div class="stepper stepper--zero" data-name="Hass-Burger" data-price="110">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Hass-Burger">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Hass-Burger">+</button>
+                  </div>
+                </div>
+              </li>
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Hawaiana</strong>
+                  <span>Sirloin, jitomate, lechuga, jamón, queso amarillo, queso Oaxaca, piña con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$100</span>
+                  <div class="stepper stepper--zero" data-name="Hawaiana" data-price="100">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Hawaiana">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Hawaiana">+</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p class="carta-panel__note">Preparadas al momento — ingredientes frescos</p>
           </article>
 
-          <article class="card">
-            <div class="card__img"><img src="img/hotdogs-capote.jpeg" alt="Hotdogs Capote"></div>
-            <div class="card__body">
-              <span class="card__badge card__badge--hot">Top venta</span>
-              <h3>Hotdogs Capote</h3>
-              <p>Capoteados con queso, jalapeños, pico de gallo y papas crocantes encima.</p>
-              <p class="card__price">$80.00 MXN</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__img"><img src="img/hamburguesa-especial.jpeg" alt="Hamburguesa Especial"></div>
-            <div class="card__body">
-              <h3>Hamburguesa Especial</h3>
-              <p>Con tocino, huevo, queso, lechuga, papas y salsa especial de la casa.</p>
-              <p class="card__price">Consulta precio</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__img"><img src="img/hamburguesa-clasica.jpeg" alt="Hamburguesa Clásica"></div>
-            <div class="card__body">
-              <h3>Hamburguesa Clásica</h3>
-              <p>Carne jugosa, lechuga fresca, pan de ajonjolí y papas crinkle sazonadas.</p>
-              <p class="card__price">Consulta precio</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__img"><img src="img/carne-asada.jpeg" alt="Torta de Carne Asada"></div>
-            <div class="card__body">
-              <h3>Torta de Carne Asada</h3>
-              <p>Carne deshebrada sobre pan tostado, con papas doradas por encima.</p>
-              <p class="card__price">Consulta precio</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__img"><img src="img/hotdog-crema.jpeg" alt="Hot Dogs con Crema"></div>
-            <div class="card__body">
-              <h3>Hot Dogs con Crema</h3>
-              <p>Doble salchicha, salsa de la casa, tocino y papas crocantes.</p>
-              <p class="card__price">Consulta precio</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__img"><img src="img/hotdog-pico.jpeg" alt="Hot Dogs con Pico de Gallo"></div>
-            <div class="card__body">
-              <h3>Hot Dogs con Pico de Gallo</h3>
-              <p>Con pico de gallo fresco, cebolla, tocino y papas sazonadas.</p>
-              <p class="card__price">Consulta precio</p>
-            </div>
+          <article class="carta-panel">
+            <h3 class="carta-panel__title">Orden de 3 Hot Dogs</h3>
+            <ul class="carta-list">
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Capote</strong>
+                  <span>Salchicha, verdura, con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$80</span>
+                  <div class="stepper stepper--zero" data-name="Capote (orden de 3)" data-price="80">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Capote">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Capote">+</button>
+                  </div>
+                </div>
+              </li>
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Estocazo</strong>
+                  <span>Salchicha, jamón, queso amarillo, guacamole, con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$100</span>
+                  <div class="stepper stepper--zero" data-name="Estocazo (orden de 3)" data-price="100">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Estocazo">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Estocazo">+</button>
+                  </div>
+                </div>
+              </li>
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>Chiquelina</strong>
+                  <span>Salchicha, jamón, queso amarillo, queso Oaxaca y trozas de piña, con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$100</span>
+                  <div class="stepper stepper--zero" data-name="Chiquelina (orden de 3)" data-price="100">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar Chiquelina">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar Chiquelina">+</button>
+                  </div>
+                </div>
+              </li>
+              <li class="carta-list__item">
+                <div class="carta-list__info">
+                  <strong>El Toro Bravo</strong>
+                  <span>Salchicha, mermelada de tocino a la BBQ o salsa M.H., con papas</span>
+                </div>
+                <div class="carta-list__buy">
+                  <span class="carta-list__price">$110</span>
+                  <div class="stepper stepper--zero" data-name="El Toro Bravo (orden de 3)" data-price="110">
+                    <button class="stepper__minus" type="button" data-act="dec" aria-label="Quitar El Toro Bravo">&minus;</button>
+                    <span class="stepper__num">0</span>
+                    <button class="stepper__plus" type="button" data-act="inc" aria-label="Agregar El Toro Bravo">+</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p class="carta-panel__note">Home Delivery — San Nicolás Hueyotla, Texcoco</p>
           </article>
 
         </div>
+
+        <p class="carta__shipping">Nota: los precios pueden incrementar por envío según tu ubicación.</p>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="section-title">Así se ven</h2>
+        <p class="section-sub">Fotos reales de nuestros pedidos — listos para llevar</p>
+
+        <div class="menu__group">
+          <h3 class="menu__group-title">Hamburguesas</h3>
+          <div class="menu__grid">
+            <figure class="photo-card">
+              <img src="img/hamburguesa-sencilla.jpeg" alt="Hamburguesa con papas">
+            </figure>
+            <figure class="photo-card">
+              <img src="img/hamburguesa-especial.jpeg" alt="Hamburguesa con tocino y huevo">
+            </figure>
+            <figure class="photo-card">
+              <img src="img/hamburguesa-clasica.jpeg" alt="Hamburguesa clásica con papas">
+            </figure>
+          </div>
+        </div>
+
+        <div class="menu__group">
+          <h3 class="menu__group-title">Hot Dogs</h3>
+          <div class="menu__grid">
+            <figure class="photo-card">
+              <img src="img/hotdogs-capote.jpeg" alt="Hot dogs con jalapeños y papas">
+            </figure>
+            <figure class="photo-card">
+              <img src="img/hotdog-crema.jpeg" alt="Hot dogs con salsa de la casa">
+            </figure>
+            <figure class="photo-card">
+              <img src="img/hotdog-pico.jpeg" alt="Hot dogs con pico de gallo">
+            </figure>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -187,7 +287,13 @@
           Pedir por WhatsApp
         </a>
         <p class="contact__phone">+52 72 96 74 5590</p>
-        <p class="contact__note">También puedes visitarnos — pregúntanos por horarios y ubicación.</p>
+        <div class="contact__social">
+          <a class="btn btn--instagram" href="https://www.instagram.com/fast.food.el.toro.del.bajio" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Síguenos en Instagram
+          </a>
+        </div>
+        <p class="contact__note">San Nicolás Hueyotla, Texcoco — pregúntanos por horarios.</p>
       </div>
     </section>
 
@@ -196,16 +302,211 @@
   <footer class="footer">
     <div class="container footer__inner">
       <img src="img/logo.jpeg" alt="Toro del Bajo" class="footer__logo">
-      <p>Toro del Bajo Hamburguesas &copy; 2026 — El sabor del Bajío</p>
+      <a class="footer__insta" href="https://www.instagram.com/fast.food.el.toro.del.bajio" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <p>Toro del Bajo Hamburguesas &copy; 2026 — San Nicolás Hueyotla, Texcoco</p>
     </div>
   </footer>
+
+  <!-- CARRITO -->
+  <div class="cart-bar" role="region" aria-label="Tu pedido">
+    <div class="cart-bar__info">
+      <span class="cart-bar__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+      </span>
+      <span class="cart-bar__texts">
+        <strong id="cartBarCount">Tu pedido</strong>
+        <span id="cartBarHint">Agrega algo de la carta</span>
+      </span>
+    </div>
+    <div class="cart-bar__action">
+      <span class="cart-bar__total" id="cartBarTotal">$0</span>
+      <button class="cart-bar__btn" id="cartFab" type="button">Ver pedido</button>
+    </div>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Tu pedido" aria-hidden="true">
+    <div class="cart-drawer__head">
+      <h3>Tu pedido</h3>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Cerrar pedido">&times;</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems"></div>
+
+    <p class="cart-drawer__empty" id="cartEmpty">Tu carrito está vacío.<br>Toca <strong>+</strong> en la carta para agregar.</p>
+
+    <div class="cart-drawer__foot">
+      <div class="cart-drawer__total">Total: <span id="cartTotal">$0</span></div>
+      <p class="cart-drawer__shipping">Nota: el total puede incrementar por envío.</p>
+      <textarea id="cartNotes" class="cart-drawer__notes" rows="2" placeholder="Comentarios del pedido (opcional)"></textarea>
+      <button class="btn btn--whatsapp cart-drawer__send" id="cartSend" disabled>Compra lista — mandar por WhatsApp</button>
+    </div>
+  </aside>
 
   <script>
     const toggle = document.getElementById('navToggle');
     const nav = document.getElementById('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('nav--open'));
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('nav--open')));
+
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.classList.toggle('to-top--show', window.scrollY > 600);
+    }, { passive: true });
+
+    // ---------- Carrito ----------
+    const WHATSAPP = '527296745590';
+    const cart = [];
+    const fab = document.getElementById('cartFab');
+    const barCount = document.getElementById('cartBarCount');
+    const barHint = document.getElementById('cartBarHint');
+    const barTotal = document.getElementById('cartBarTotal');
+    const drawer = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('cartOverlay');
+    const itemsEl = document.getElementById('cartItems');
+    const emptyEl = document.getElementById('cartEmpty');
+    const totalEl = document.getElementById('cartTotal');
+    const sendBtn = document.getElementById('cartSend');
+    const notesEl = document.getElementById('cartNotes');
+
+    const money = n => '$' + n.toLocaleString('es-MX');
+
+    function findItem(name) {
+      return cart.find(i => i.name === name);
+    }
+
+    function renderCart() {
+      itemsEl.innerHTML = '';
+      let total = 0, count = 0;
+
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        count += item.qty;
+
+        const row = document.createElement('div');
+        row.className = 'cart-item';
+        row.innerHTML =
+          '<div class="cart-item__info">' +
+            '<strong></strong>' +
+            '<span class="cart-item__unit"></span>' +
+          '</div>' +
+          '<div class="cart-item__controls">' +
+            '<button type="button" data-act="dec" aria-label="Quitar uno">&minus;</button>' +
+            '<span class="cart-item__qty"></span>' +
+            '<button type="button" data-act="inc" aria-label="Agregar uno">+</button>' +
+            '<button type="button" class="cart-item__remove" data-act="del" aria-label="Quitar del pedido">&times;</button>' +
+          '</div>' +
+          '<div class="cart-item__sub"></div>';
+        row.querySelector('strong').textContent = item.name;
+        row.querySelector('.cart-item__unit').textContent = money(item.price) + ' c/u';
+        row.querySelector('.cart-item__qty').textContent = item.qty;
+        row.querySelector('.cart-item__sub').textContent = money(item.price * item.qty);
+        row.addEventListener('click', e => {
+          const act = e.target.dataset.act;
+          if (!act) return;
+          if (act === 'inc') item.qty++;
+          if (act === 'dec') item.qty = Math.max(0, item.qty - 1);
+          if (act === 'del') item.qty = 0;
+          if (item.qty === 0) cart.splice(cart.indexOf(item), 1);
+          renderCart();
+        });
+        itemsEl.appendChild(row);
+      });
+
+      emptyEl.hidden = cart.length > 0;
+      totalEl.textContent = money(total);
+      sendBtn.disabled = cart.length === 0;
+      barCount.textContent = count
+        ? count + (count === 1 ? ' producto' : ' productos')
+        : 'Tu pedido';
+      barHint.textContent = count
+        ? 'Listo para enviar'
+        : 'Agrega algo de la carta';
+      barTotal.textContent = money(total);
+      fab.classList.toggle('cart-bar__btn--active', count > 0);
+      syncSteppers();
+    }
+
+    function qtyOf(name) {
+      const item = findItem(name);
+      return item ? item.qty : 0;
+    }
+
+    function syncSteppers() {
+      document.querySelectorAll('.stepper').forEach(s => {
+        const qty = qtyOf(s.dataset.name);
+        s.querySelector('.stepper__num').textContent = qty;
+        s.classList.toggle('stepper--zero', qty === 0);
+      });
+    }
+
+    document.querySelectorAll('.stepper').forEach(stepper => {
+      stepper.addEventListener('click', e => {
+        const btn = e.target.closest('[data-act]');
+        if (!btn) return;
+        const name = stepper.dataset.name;
+        const price = Number(stepper.dataset.price);
+        const item = findItem(name);
+        if (btn.dataset.act === 'inc') {
+          if (item) item.qty++;
+          else cart.push({ name, price, qty: 1 });
+        } else {
+          if (!item) return;
+          item.qty--;
+          if (item.qty <= 0) cart.splice(cart.indexOf(item), 1);
+        }
+        renderCart();
+      });
+    });
+
+    function openCart() {
+      drawer.classList.add('cart-drawer--open');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.hidden = false;
+      requestAnimationFrame(() => overlay.classList.add('cart-overlay--show'));
+      document.body.style.overflow = 'hidden';
+      document.getElementById('cartClose').focus();
+    }
+
+    function closeCart() {
+      drawer.classList.remove('cart-drawer--open');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('cart-overlay--show');
+      document.body.style.overflow = '';
+      setTimeout(() => { overlay.hidden = true; }, 250);
+      fab.focus();
+    }
+
+    fab.addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+
+    sendBtn.addEventListener('click', () => {
+      const notes = notesEl.value.trim();
+      const lines = ['Hola Toro del Bajo, quiero hacer este pedido:', ''];
+      cart.forEach(item => {
+        lines.push('- ' + item.qty + ' x ' + item.name + ' = ' + money(item.price * item.qty));
+      });
+      lines.push('', 'Total: ' + totalEl.textContent + ' MXN');
+      if (notes) lines.push('', 'Comentarios: ' + notes);
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+    });
+
+    renderCart();
   </script>
+
+  <a href="#inicio" class="to-top" id="toTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </a>
 
 </body>
 </html>
