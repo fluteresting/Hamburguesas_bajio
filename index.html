@@ -344,7 +344,7 @@
     <div class="cart-drawer__foot">
       <div class="cart-drawer__total">Total: <span id="cartTotal">$0</span></div>
       <p class="cart-drawer__shipping">Nota: el total puede incrementar por envío.</p>
-      <textarea id="cartNotes" class="cart-drawer__notes" rows="2" placeholder="Comentarios del pedido (opcional)"></textarea>
+      <textarea id="cartNotes" class="cart-drawer__notes" rows="2" placeholder="Comentarios o dirección de envío (opcional)"></textarea>
       <button class="btn btn--whatsapp cart-drawer__send" id="cartSend" disabled>Compra lista — mandar por WhatsApp</button>
     </div>
   </aside>
@@ -490,12 +490,19 @@
 
     sendBtn.addEventListener('click', () => {
       const notes = notesEl.value.trim();
-      const lines = ['Hola Toro del Bajo, quiero hacer este pedido:', ''];
+      const lines = [
+        'Hola Toro del Bajo, quiero hacer este pedido:',
+        '',
+        '*Mi pedido*'
+      ];
       cart.forEach(item => {
-        lines.push('- ' + item.qty + ' x ' + item.name + ' = ' + money(item.price * item.qty));
+        lines.push('• ' + item.qty + 'x ' + item.name +
+          ' (' + money(item.price) + ' c/u) — ' + money(item.price * item.qty));
       });
-      lines.push('', 'Total: ' + totalEl.textContent + ' MXN');
-      if (notes) lines.push('', 'Comentarios: ' + notes);
+      lines.push('', '*Total:* ' + totalEl.textContent + ' MXN');
+      lines.push('¿Cuánto sería el envío?');
+      if (notes) lines.push('', '*Comentarios:* ' + notes);
+      lines.push('', '¡Gracias!');
       window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
     });
 
