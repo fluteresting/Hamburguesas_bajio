@@ -27,6 +27,7 @@
         <a href="#carta">Carta</a>
         <a href="#menu">Menú</a>
         <a href="#contacto">Contacto</a>
+        <a href="#nosotros">Nosotros</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -41,7 +42,17 @@
       <div class="hero__bg"></div>
       <div class="container hero__content">
         <p class="hero__kicker hero-anim" style="--d:.1s">Bienvenido al sabor inigualable</p>
-        <h1 class="hero__title hero-anim" style="--d:.25s">TORO DEL BAJÍO</h1>
+        <div class="hero__title-wrap hero-anim" style="--d:.25s">
+          <div class="fireworks" aria-hidden="true">
+            <i class="fw fw--1"></i>
+            <i class="fw fw--2"></i>
+            <i class="fw fw--3"></i>
+            <i class="fw fw--4"></i>
+            <i class="fw fw--5"></i>
+            <i class="fw fw--6"></i>
+          </div>
+          <h1 class="hero__title">TORO DEL BAJÍO</h1>
+        </div>
         <p class="hero__subtitle hero-anim" style="--d:.4s">Hamburguesas &amp; Hot Dogs hechas con el corazón</p>
         <div class="hero__actions hero-anim" style="--d:.55s">
           <a href="#carta" class="btn btn--primary btn--hero">Ver la carta</a>
@@ -272,7 +283,33 @@
           Pedir por WhatsApp
         </a>
         <p class="contact__phone">+52 72 96 74 5590</p>
+        <div class="contact__social reveal" style="--d:.25s">
+          <a class="btn btn--instagram" href="https://www.instagram.com/fast.food.el.toro.del.bajio" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Síguenos en Instagram
+          </a>
+        </div>
         <p class="contact__note">San Nicolás Hueyotla, Texcoco — pregúntanos por horarios.</p>
+      </div>
+    </section>
+
+    <!-- QUIENES SOMOS -->
+    <section class="about" id="nosotros">
+      <div class="container about__inner">
+        <div class="about__img reveal">
+          <img src="img/logo.jpeg" alt="Logo Toro del Bajío Hamburguesas">
+        </div>
+        <div class="about__body">
+          <h2 class="section-title section-title--dark section-title--left reveal">¿Quiénes somos?</h2>
+          <p class="about__text reveal" style="--d:.12s">
+            Hamburguesas y hot dogs hechas con el corazón: productos frescos,
+            de calidad y recetas de la casa en cada pedido.
+          </p>
+          <a class="about__insta reveal" style="--d:.22s" href="https://www.instagram.com/fast.food.el.toro.del.bajio" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Síguenos en Instagram
+          </a>
+        </div>
       </div>
     </section>
 
@@ -280,7 +317,9 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <img src="img/logo.jpeg" alt="Toro del Bajío" class="footer__logo">
+      <a class="footer__insta" href="https://www.instagram.com/fast.food.el.toro.del.bajio" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
       <p>Toro del Bajío Hamburguesas &copy; 2026 — San Nicolás Hueyotla, Texcoco</p>
     </div>
   </footer>
@@ -301,7 +340,7 @@
     </button>
     <div class="cart-bar__action">
       <span class="cart-bar__total" id="cartBarTotal">$0</span>
-      <button class="cart-bar__btn" id="cartFab" type="button">Pedir</button>
+      <button class="cart-bar__btn" id="cartFab" type="button">Ver carta</button>
     </div>
   </div>
 
@@ -321,7 +360,7 @@
       <div class="cart-drawer__total">Total: <span id="cartTotal">$0</span></div>
       <p class="cart-drawer__shipping">Nota: el total puede incrementar por envío.</p>
       <textarea id="cartNotes" class="cart-drawer__notes" rows="2" placeholder="Comentarios o dirección de envío (opcional)"></textarea>
-      <button class="btn btn--whatsapp cart-drawer__send" id="cartSend" disabled>Enviar pedido por WhatsApp</button>
+      <button class="btn btn--whatsapp cart-drawer__send" id="cartSend" disabled>Enviar por WhatsApp</button>
     </div>
   </aside>
 
@@ -424,12 +463,15 @@
       barCount.textContent = count
         ? count + (count === 1 ? ' producto' : ' productos')
         : 'Tu pedido';
-      barHint.textContent = count
-        ? 'Toca Pedir para enviar'
-        : 'Agrega algo de la carta';
+      barHint.textContent = count ? '' : 'Agrega algo de la carta';
       barTotal.textContent = money(total);
-      fab.textContent = count ? 'Pedir por WhatsApp' : 'Ver carta';
+      fab.textContent = count ? 'Toca Pedir para enviar' : 'Ver carta';
       fab.classList.toggle('cart-bar__btn--active', count > 0);
+      if (count > 0) {
+        fab.classList.remove('cart-bar__btn--flash');
+        void fab.offsetWidth;
+        fab.classList.add('cart-bar__btn--flash');
+      }
       syncSteppers();
     }
 
@@ -511,9 +553,9 @@
       window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
     }
 
-    // Un toque: si hay pedido, enviar directo a WhatsApp; si no, ir a la carta
+    // Toca Pedir → revisar el pedido (resumen) antes de enviar
     fab.addEventListener('click', () => {
-      if (cart.length) sendOrder();
+      if (cart.length) openCart();
       else goToCart();
     });
 
@@ -527,6 +569,7 @@
     overlay.addEventListener('click', closeCart);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
 
+    // Después de revisar y comentar: enviar por WhatsApp
     sendBtn.addEventListener('click', () => {
       sendOrder();
       closeCart();
