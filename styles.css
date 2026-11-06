@@ -33,7 +33,75 @@ section[id] { scroll-margin-top: 84px; }
 
 img { max-width: 100%; display: block; }
 
-/* Taps al instante en celular: sin retardo de doble-tap ni zoom accidental */
+/* ---------- Splash (logo de entrada) ---------- */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--dark);
+  display: grid;
+  place-items: center;
+  animation: splashOut 0.5s ease 2.1s forwards;
+}
+
+.splash__logo {
+  width: min(220px, 55vw);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--yellow);
+  box-shadow: 0 0 40px rgba(249, 200, 14, 0.35);
+  animation: logoJump 1.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes logoJump {
+  0% { transform: translateY(-140%) scale(0.5); opacity: 0; }
+  28% { transform: translateY(0) scale(1.08); opacity: 1; }
+  40% { transform: translateY(0) scale(1); }
+  52% { transform: translateY(-36px) scale(1.04); }
+  66% { transform: translateY(0) scale(0.98); }
+  76% { transform: translateY(-16px) scale(1.01); }
+  86% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes splashOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ---------- Animaciones de entrada (hero) ---------- */
+.hero-anim {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroIn 0.7s ease forwards;
+  animation-delay: calc(2.3s + var(--d, 0s));
+}
+
+.hero__collage-item.hero-anim {
+  transform: translateY(40px) scale(0.92);
+}
+
+@keyframes heroIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Reveal al hacer scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Taps al instante en celular ---------- */
 button, a, [role="button"] {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -98,26 +166,6 @@ button, a, [role="button"] {
 }
 
 .btn--whatsapp:hover { background: #3ee97a; }
-
-.btn--instagram {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: var(--white);
-  font-size: 1.02rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.35);
-}
-
-.btn--instagram:hover { filter: brightness(1.1); }
-
-.contact__social {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 
 /* ---------- Header ---------- */
 .header {
@@ -239,7 +287,7 @@ button, a, [role="button"] {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center;
+  object-position: center 68%;
   border-radius: 16px;
   border: 3px solid rgba(249, 200, 14, 0.85);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
@@ -256,11 +304,12 @@ button, a, [role="button"] {
 
 .hero__collage-item--logo {
   object-fit: contain;
+  object-position: center;
   background: var(--white);
   border-radius: 50%;
 }
 
-/* ---------- Scroll down / Volver arriba ---------- */
+/* ---------- Scroll down ---------- */
 .scroll-down {
   display: inline-flex;
   flex-direction: column;
@@ -280,8 +329,7 @@ button, a, [role="button"] {
   border-radius: 50%;
   border: 2px solid rgba(249, 200, 14, 0.7);
   background: rgba(249, 200, 14, 0.12);
-  box-shadow: 0 0 0 0 rgba(249, 200, 14, 0.4);
-  animation: bounce 1.6s infinite, arrowHalo 2.2s infinite;
+  animation: bounce 1.6s infinite;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -300,70 +348,6 @@ button, a, [role="button"] {
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(9px); }
-}
-
-@keyframes arrowHalo {
-  0% { box-shadow: 0 0 0 0 rgba(249, 200, 14, 0.45); }
-  70% { box-shadow: 0 0 0 14px rgba(249, 200, 14, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(249, 200, 14, 0); }
-}
-
-.to-top {
-  position: fixed;
-  right: 1rem;
-  bottom: calc(84px + env(safe-area-inset-bottom));
-  z-index: 55;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  background: var(--yellow);
-  color: var(--dark);
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(14px);
-  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
-}
-
-.to-top--show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.to-top:hover { background: var(--yellow-bright); }
-
-/* Barra lateral de scroll (celular) */
-.scroll-rail { display: none; }
-
-@media (max-width: 720px) {
-  .scroll-rail {
-    display: block;
-    position: fixed;
-    right: 4px;
-    top: 84px;
-    bottom: calc(96px + env(safe-area-inset-bottom));
-    width: 5px;
-    background: rgba(255, 255, 255, 0.14);
-    border-radius: 999px;
-    z-index: 54;
-    pointer-events: none;
-  }
-
-  .scroll-rail__thumb {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    min-height: 36px;
-    border-radius: 999px;
-    background: var(--yellow);
-    box-shadow: 0 0 8px rgba(249, 200, 14, 0.6);
-  }
 }
 
 /* ---------- Sections ---------- */
@@ -634,40 +618,11 @@ section { padding: 4.5rem 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 68%;
   transition: transform 0.4s;
 }
 
 .photo-card:hover img { transform: scale(1.06); }
-
-/* ---------- About ---------- */
-.about { background: var(--cream); color: var(--dark); }
-
-.about__inner {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.about__img img {
-  width: 100%;
-  max-width: 380px;
-  margin-inline: auto;
-  border-radius: 50%;
-  border: 6px solid var(--green);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
-}
-
-.about .section-title { color: var(--green); }
-
-.about__text p {
-  margin-bottom: 1rem;
-  color: #333;
-  font-size: 1.02rem;
-}
-
-.about__text .btn { margin-top: 0.8rem; }
 
 /* ---------- Contact ---------- */
 .contact {
@@ -714,21 +669,6 @@ section { padding: 4.5rem 0; }
   border: 2px solid var(--yellow);
 }
 
-.footer__insta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: var(--white);
-  margin-bottom: 0.9rem;
-  transition: transform 0.2s;
-}
-
-.footer__insta:hover { transform: scale(1.1); }
-
 .footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
 
 /* ---------- Carrito (barra inferior estilo WhatsApp Business) ---------- */
@@ -754,6 +694,14 @@ section { padding: 4.5rem 0; }
   align-items: center;
   gap: 0.7rem;
   min-width: 0;
+  flex: 1;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .cart-bar__icon {
@@ -822,6 +770,13 @@ section { padding: 4.5rem 0; }
   background: var(--yellow);
   color: var(--dark);
   box-shadow: 0 4px 14px rgba(249, 200, 14, 0.35);
+  animation: btnPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes btnPop {
+  0% { transform: scale(0.85); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 .cart-bar__btn:hover { transform: translateY(-1px); }
@@ -1055,10 +1010,6 @@ section { padding: 4.5rem 0; }
 
   .carta-list__info span { font-size: 0.97rem; }
 
-  .about__inner { gap: 4rem; }
-
-  .about__img img { max-width: 420px; }
-
   .photo-card:hover img { transform: scale(1.08); }
 }
 
@@ -1081,14 +1032,14 @@ section { padding: 4.5rem 0; }
   .hero__subtitle { margin-inline: auto; }
   .hero__actions { justify-content: center; }
   .hero__collage { width: 100%; max-width: 560px; margin-inline: auto; }
-
-  .about__inner { grid-template-columns: 1fr; text-align: center; }
-  .about .section-title { text-align: center; }
-  .about__text .btn { margin-inline: auto; }
 }
 
 @media (max-width: 720px) {
   body { font-size: 17px; }
+
+  .scroll-down { margin: 1.8rem auto 0; }
+
+  .scroll-down__circle { width: 62px; height: 62px; }
 
   .nav-toggle {
     display: flex;
@@ -1159,12 +1110,6 @@ section { padding: 4.5rem 0; }
     max-width: 30ch;
   }
 
-  .scroll-down { margin: 1.8rem auto 0; }
-
-  .scroll-down__circle { width: 62px; height: 62px; }
-
-  .scroll-down__label { font-size: 0.75rem; }
-
   .section-title { font-size: clamp(1.7rem, 8vw, 2.4rem); }
 
   .section-sub { font-size: 1rem; margin-bottom: 1.8rem; }
@@ -1192,8 +1137,7 @@ section { padding: 4.5rem 0; }
 
   .promo-card__img { height: 340px; }
 
-  .btn--whatsapp,
-  .btn--instagram {
+  .btn--whatsapp {
     width: 100%;
     justify-content: center;
     padding: 1.1rem 1.5rem;
@@ -1201,8 +1145,6 @@ section { padding: 4.5rem 0; }
   }
 
   .contact__phone { font-size: 1.7rem; }
-
-  .about__img img { max-width: 260px; }
 
   .cart-bar {
     min-height: 64px;
@@ -1237,8 +1179,6 @@ section { padding: 4.5rem 0; }
   .cart-drawer__foot {
     padding-bottom: calc(1.1rem + env(safe-area-inset-bottom));
   }
-
-  .to-top { right: 0.9rem; }
 }
 
 @media (max-width: 380px) {
@@ -1249,7 +1189,17 @@ section { padding: 4.5rem 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .btn--hero,
   .scroll-down__circle,
-  .btn--hero { animation: none !important; }
+  .cart-bar__btn--active { animation: none !important; }
+  .splash { animation: splashOut 0.3s ease 0.3s forwards; }
+  .splash__logo { animation: none; }
+  .hero-anim,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+    transition: none !important;
+  }
   * { transition: none !important; }
 }
